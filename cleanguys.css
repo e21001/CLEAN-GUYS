@@ -17,6 +17,12 @@ img {
 li {
   list-style: none;
 }
+/* container部分 */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 /* header部分 */
 header {
   border-bottom: 3px solid rgb(14, 29, 133, .5);
@@ -73,12 +79,76 @@ main {
 }
 /* footer部分 */
 footer {
-  margin-top: 100px;
+  margin-top: auto;
   text-align: center;
   border-top: 3px solid rgb(14, 29, 133, .5);
 }
 footer p {
   margin:10px 20px;
+}
+/* アカウント作成画面部分 */
+.registration-form {
+  width: 600px;
+  margin: 30px auto;
+  border: 1px solid #d1d1d1;
+  padding: 30px;
+}
+.registration-form form {
+  margin-top: 20px;
+}
+.registration-form input {
+  font-size: 1.2em;
+  width: 100%;
+}
+.registration-form input[type="text"], input[type="email"], input[type="password"] {
+  border-bottom: 1px solid #d1d1d1;
+}
+.registration-form input[type="file"] {
+  font-size: 15px;
+}
+.control {
+  margin-bottom: 1em;
+}
+button {
+  margin-top: 30px;
+  width: 100%;
+  background-color: rgb(6, 115, 0, 0.7);
+  padding: 15px;
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .4);
+}
+button:hover {
+  opacity: 0.7;
+}
+.required {
+  margin-left: .3em;
+  color: #f33;
+  font-size: .9em;
+  background-color: #fee;
+  font-weight: bold;
+}
+/* ログインポップアップ */
+.login-popup {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  background: grey;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.content {
+  background: #fff;
+  padding: 30px;
+  width: 50%;
+}
+.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#save {
+  width: auto;
 }
 /* レスポンシブデザイン */
 @media only screen and (max-width: 600px) {
@@ -91,9 +161,11 @@ footer p {
   .guide {
     font-size: 13px;
   }
-  footer {
-    margin-top: 230px;
-    text-align: center;
-    border-top: 3px solid rgb(14, 29, 133, .5);
+  /* アカウント作成画面部分 */
+  .registration-form {
+    width: 380px;
+  }
+  .registration-form input[type="file"] {
+    font-size: 15px;
   }
 }
