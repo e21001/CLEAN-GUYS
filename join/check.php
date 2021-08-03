@@ -15,7 +15,7 @@
       <h1><img class="header-logo" src="../img/logo.png" alt="CLEAN GUYSロゴ"></h1>
     </header>
     <div class="registration-form">
-      <h2>確認画面</h2>
+      <h2>入力内容の確認</h2>
       <p>記入した内容を確認して、「登録する」ボタンをクリックしてください。</p>
       <form　action="" method="post" enctype="multipart/form-data">
         <div class="control">

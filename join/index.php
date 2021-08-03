@@ -35,7 +35,7 @@
           <input id="myprofile" type="file" name="profile" value="">
         </div>
         <div class="control">
-          <button type="submit" name="operation" style="color:#fff">登録する</button>
+          <button type="submit" name="operation" style="color:#fff">入力内容を確認する</button>
         </div>
       </form>
     </div>

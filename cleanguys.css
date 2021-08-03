@@ -161,9 +161,13 @@ button:hover {
   .guide {
     font-size: 13px;
   }
+  /* ログイン画面 */
+  .content {
+    width: 100%;
+  }
   /* アカウント作成画面部分 */
   .registration-form {
-    width: 380px;
+    width: 100%;
   }
   .registration-form input[type="file"] {
     font-size: 15px;

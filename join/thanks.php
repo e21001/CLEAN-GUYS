@@ -15,7 +15,7 @@
       <h1><img class="header-logo" src="../img/logo.png" alt="CLEAN GUYSロゴ"></h1>
     </header>
     <div class="registration-form">
-      <h2>完了画面</h2>
+      <h2>登録完了</h2>
       <p>ユーザー登録が完了しました。</p>
       <p><a href="../cleanguys.html">ログインする</a></p>
     </div>
