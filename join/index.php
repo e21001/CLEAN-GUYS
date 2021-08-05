@@ -26,33 +26,33 @@ ini_set('error_reporting', 'E_ALL & ~E_NOTICE');
       <form class="" action="" method="post" enctype="multipart/form-data">
         <div class="control">
           <label for="myname">ニックネーム<span class="required">必須</span></label>
-          <input id="myname" type="text" name="name" value="<?php echo escape($_POST['name']) ?>">
+          <input id="myname" type="text" name="name" value="">
           <?php if ($error['name'] === 'blank'): ?>
-            <p class="error">* ニックネームを入力してください</p>
+            <p class="error" style="color:red;">* ニックネームを入力してください</p>
           <?php endif ?>
         </div>
         <div class="control">
           <label for="mymail">メールアドレス<span class="required">必須</span></label>
-          <input id="mymail" type="email" name="email" value="<?php echo escape($_POST['email']) ?>">
+          <input id="mymail" type="email" name="email" value="">
           <?php if ($error['email'] === 'blank'): ?>
-            <p class="error">* メールアドレスを入力してください</p>
+            <p class="error" style="color:red;">* メールアドレスを入力してください</p>
           <?php endif ?>
         </div>
         <div class="control">
           <label for="mypassword">パスワード<span class="required">必須</span></label>
           <input id="mypassword" type="password" name="password" value="">
           <?php if ($error['password'] === 'blank'): ?>
-            <p class="error">* パスワードを入力してください</p>
+            <p class="error" style="color:red;">* パスワードを入力してください</p>
           <?php endif ?>
           <?php if ($error['password'] === 'length'): ?>
-            <p class="error">* パスワードは4文字以上で入力してください</p>
+            <p class="error" style="color:red;">* パスワードは4文字以上で入力してください</p>
           <?php endif ?>
         </div>
         <div class="control">
           <label for="myimage">プロフィール画像<span class="required">必須</span></label>
           <input id="myimage" type="file" name="image" value="">
           <?php if (!empty($error)): ?>
-            <p class="error">* 恐れ入りますが、画像を改めて指定してください。</p>
+            <p class="error" style="color:red;">* 恐れ入りますが、画像を改めて指定してください。</p>
           <?php endif ?>
         </div>
         <div class="control">
