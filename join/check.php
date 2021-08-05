@@ -1,3 +1,14 @@
+<?php
+declare(strict_types=1);
+require_once dirname(__FILE__) . '/../phpscript/test.php';
+session_start();
+ini_set('error_reporting', 'E_ALL & ~E_NOTICE');
+// セッション情報があるか確認
+if (!isset($_SESSION['join'])) {
+  header('Location: index.php');
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -20,11 +31,11 @@
       <form　action="" method="post" enctype="multipart/form-data">
         <div class="control">
           <p>ニックネーム</p>
-          <p>ここにニックネーム</p>
+          <p><?php echo escape($_SESSION['join']['name']) ?></p>
         </div>
         <div class="control">
           <p>メールアドレス</p>
-          <p>ここにメールアドレス</p>
+          <p><?php echo escape($_SESSION['join']['email']) ?></p>
         </div>
         <div class="control">
           <p>パスワード</p>
@@ -32,8 +43,9 @@
         </div>
         <div class="control">
           <p>プロフィール画像</p>
-          <p>【表示されません】</p>
+          <p><img src="<?php echo escape($_SESSION['join']['image'])?>" style="width:100px" alt="こんにちは"></p>
         </div>
+        <p><a href="index.php?action=rewrite">&laquo;&nbsp;書き直す</a></p>
         <div class="control">
           <button type="submit" name="operation" style="color:#fff">登録する</button>
         </div>
