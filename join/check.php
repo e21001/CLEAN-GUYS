@@ -1,11 +1,25 @@
 <?php
 declare(strict_types=1);
-require_once dirname(__FILE__) . '/../phpscript/test.php';
 session_start();
-ini_set('error_reporting', 'E_ALL & ~E_NOTICE');
+require_once dirname(__FILE__) . '/../phpscript/escape.php';
+require_once dirname(__FILE__) . '/../phpscript/dbconnect.php';
 // セッション情報があるか確認
 if (!isset($_SESSION['join'])) {
   header('Location: index.php');
+  exit();
+}
+// 登録処理のプログラム
+if (!empty($_POST)) {
+  $statement = $db->prepare('INSERT INTO users SET name=?, email=?, password=?, picture=?, created=NOW()');
+  echo $ret = $statement->execute(array(
+    $_SESSION['join']['name'],
+    $_SESSION['join']['email'],
+    sha1($_SESSION['join']['password']),
+    $_SESSION['join']['image']
+  ));
+  unset($_SESSION['join']);
+
+  header('Location: thanks.php');
   exit();
 }
 ?>
@@ -28,23 +42,24 @@ if (!isset($_SESSION['join'])) {
     <div class="registration-form">
       <h2>入力内容の確認</h2>
       <p>記入した内容を確認して、「登録する」ボタンをクリックしてください。</p>
-      <form　action="" method="post" enctype="multipart/form-data">
-        <div class="control">
-          <p>ニックネーム</p>
-          <p><?php echo escape($_SESSION['join']['name']) ?></p>
-        </div>
-        <div class="control">
-          <p>メールアドレス</p>
-          <p><?php echo escape($_SESSION['join']['email']) ?></p>
-        </div>
-        <div class="control">
-          <p>パスワード</p>
-          <p>【表示されません】</p>
-        </div>
-        <div class="control">
-          <p>プロフィール画像</p>
-          <p><img src="<?php echo escape($_SESSION['join']['image'])?>" style="width:100px" alt="こんにちは"></p>
-        </div>
+      <form　action="" method="post">
+        <input type="hidden" name="action" value="submit">
+        <dt>ニックネーム</dt>
+        <dd>
+          <?php echo escape($_SESSION['join']['name']) ?>
+        </dd>
+        <dt>メールアドレス</dt>
+        <dd>
+          <?php echo escape($_SESSION['join']['email']) ?>
+        </dd>
+        <dt>パスワード</dt>
+        <dd>
+          表示されません
+        </dd>
+        <dt>プロフィール画像</dt>
+        <dd>
+          <img src="<?php echo escape($_SESSION['join']['image'])?>" style="width:100px" alt="こんにちは">
+        </dd>
         <p><a href="index.php?action=rewrite">&laquo;&nbsp;書き直す</a></p>
         <div class="control">
           <button type="submit" name="operation" style="color:#fff">登録する</button>
