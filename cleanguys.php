@@ -1,3 +1,7 @@
+<?php
+  declare(strict_types=1);
+  require_once dirname(__FILE__) . '/phpscript/login/login.php';
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -36,11 +40,17 @@
           <form class="popup-form" action="" method="post">
             <div class="control">
               <label for="mymail">メールアドレス</label>
-              <input id="mymail" type="email" name="email" value="">
+              <input id="mymail" type="email" name="email" value="<?php echo escape($_POST['email']) ?>">
+              <?php if ($error['login'] === 'blank'): ?>
+                <p class="error" style="color:red;">* メールアドレスとパスワードをご記入ください</p>
+              <?php endif ?>
+              <?php if ($error['login'] === 'failed'): ?>
+                <p class="error" style="color:red;">* ログインに失敗しました。正しくご記入ください。</p>
+              <?php endif ?>
             </div>
             <div class="control">
               <label for="mypassword">パスワード</label>
-              <input id="mypassword" type="password" name="password" value="">
+              <input id="mypassword" type="password" name="password" value="<?php echo escape($_POST['password']) ?>">
             </div>
             <label for="save"><input id="save" class="save" type="checkbox" name="save" value="on"> 次回から自動的にログインする</label>
             <div class="control">
