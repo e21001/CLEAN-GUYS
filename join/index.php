@@ -1,8 +1,8 @@
 <?php
-declare(strict_types=1);
-require_once dirname(__FILE__) . '/../phpscript/test.php';
-session_start();
-ini_set('error_reporting', 'E_ALL & ~E_NOTICE');
+  declare(strict_types=1);
+  require_once dirname(__FILE__) . '/../phpscript/test.php';
+  session_start();
+  ini_set('error_reporting', 'E_ALL & ~E_NOTICE');
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -36,6 +36,9 @@ ini_set('error_reporting', 'E_ALL & ~E_NOTICE');
           <input id="mymail" type="email" name="email" value="">
           <?php if ($error['email'] === 'blank'): ?>
             <p class="error" style="color:red;">* メールアドレスを入力してください</p>
+          <?php endif ?>
+          <?php if ($error['email'] === 'duplicate'): ?>
+            <p class="error" style="color:red;">* 指定されたメールアドレスはすでに登録されています</p>
           <?php endif ?>
         </div>
         <div class="control">

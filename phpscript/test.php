@@ -2,6 +2,7 @@
   declare(strict_types=1);
   require_once dirname(__FILE__) . '/escape.php';
   require_once dirname(__FILE__) . '/fileupload.php';
+  require_once dirname(__FILE__) . '/dbconnect.php';
   session_start();
   ini_set('error_reporting', 'E_ALL & ~E_NOTICE');
 
@@ -30,6 +31,15 @@ if (!empty($_POST)) {
   if ($moved !== true) {
     echo 'アップロード中にエラーが発生しました。';
     return;
+  }
+  // 重複アカウントのチェック
+  if (empty($error)) {
+    $user = $db->prepare('SELECT COUNT(*) AS cnt FROM users WHERE email=?');
+    $user->execute(array($_POST['email']));
+    $record = $user->fetch();
+    if ($record['cnt'] > 0) {
+      $error['email'] = 'duplicate';
+    }
   }
   if (empty($error)) {
     $_SESSION['join'] = $_POST;

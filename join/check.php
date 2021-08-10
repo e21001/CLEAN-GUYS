@@ -1,27 +1,27 @@
 <?php
-declare(strict_types=1);
-session_start();
-require_once dirname(__FILE__) . '/../phpscript/escape.php';
-require_once dirname(__FILE__) . '/../phpscript/dbconnect.php';
-// セッション情報があるか確認
-if (!isset($_SESSION['join'])) {
-  header('Location: index.php');
-  exit();
-}
-// 登録処理のプログラム
-if (!empty($_POST)) {
-  $statement = $db->prepare('INSERT INTO users SET name=?, email=?, password=?, picture=?, created=NOW()');
-  echo $ret = $statement->execute(array(
-    $_SESSION['join']['name'],
-    $_SESSION['join']['email'],
-    sha1($_SESSION['join']['password']),
-    $_SESSION['join']['image']
-  ));
-  unset($_SESSION['join']);
+  declare(strict_types=1);
+  require_once dirname(__FILE__) . '/../phpscript/escape.php';
+  require_once dirname(__FILE__) . '/../phpscript/dbconnect.php';
+  session_start();
+  // セッション情報があるか確認
+  if (!isset($_SESSION['join'])) {
+    header('Location: index.php');
+    exit();
+  }
+  // 登録処理のプログラム
+  if (!empty($_POST)) {
+    $statement = $db->prepare('INSERT INTO users SET name=?, email=?, password=?, picture=?, created=NOW()');
+    echo $ret = $statement->execute(array(
+      $_SESSION['join']['name'],
+      $_SESSION['join']['email'],
+      sha1($_SESSION['join']['password']),
+      $_SESSION['join']['image']
+    ));
+    unset($_SESSION['join']);
 
-  header('Location: thanks.php');
-  exit();
-}
+    header('Location: thanks.php');
+    exit();
+  }
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -42,7 +42,7 @@ if (!empty($_POST)) {
     <div class="registration-form">
       <h2>入力内容の確認</h2>
       <p>記入した内容を確認して、「登録する」ボタンをクリックしてください。</p>
-      <form　action="" method="post">
+      <form name="" action="" method="post">
         <input type="hidden" name="action" value="submit">
         <dt>ニックネーム</dt>
         <dd>
