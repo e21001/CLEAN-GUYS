@@ -17,7 +17,7 @@
     <div class="registration-form">
       <h2>登録完了</h2>
       <p>ユーザー登録が完了しました。</p>
-      <p><a href="../cleanguys.html">ログインする</a></p>
+      <p><a href="../cleanguys.php">ログインする</a></p>
     </div>
     <footer>
       <p><small>&copy; 2021 CLEAN GUYS</small></p>
