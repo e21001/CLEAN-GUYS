@@ -33,21 +33,15 @@
     </header>
     <main>
       <h2><?php echo escape($user['name']) ?>さん、こんにちは！</h2>
-      <form class="" name="post" action="" method="post" enctype="multipart/form-data">
+      <form class="" name="posted" action="" method="post" enctype="multipart/form-data">
         <dl>
           <dt>投稿はこちらから！</dt>
           <dd>
             <textarea name="postedMessage" rows="8" cols="80"></textarea>
-            <?php if ($error['postedMessage'] === 'blank'): ?>
-              <p class="error" style="color:red;">* メッセージ欄が空白です</p>
-            <?php endif ?>
           </dd>
           <dt>写真など</dt>
           <dd>
             <input type="file" name="postedImage" value="">
-            <?php if (!empty($error)): ?>
-              <p class="error" style="color:red;">* 恐れ入りますが、画像を改めて指定してください。</p>
-            <?php endif ?>
           </dd>
           <dt>ジャンル</dt>
           <dd>
@@ -56,16 +50,11 @@
               <option value="2">報告</option>
               <option value="3">情報</option>
             </select>
-            <?php if ($error['category'] === 'blank'): ?>
-              <p class="error" style="color:red;">* ジャンルを選択してください</p>
-            <?php endif ?>
           </dd>
         </dl>
-        <div class="">
-          <button type="submit" name="">投稿する</button>
-        </div>
+        <input type="submit" name="operation" value="投稿する">
       </form>
-      <?php echo var_dump($_GET['post']) ?>
+      <?php echo var_dump($_POST['post']) ?>
     </main>
     <footer>
       <p><small>&copy; 2021 CLEAN GUYS</small></p>

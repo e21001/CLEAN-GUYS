@@ -7,8 +7,8 @@
   ini_set('error_reporting', 'E_ALL & ~E_NOTICE');
 
   // エラー項目の確認
-  if (!empty($_POST['post'])) {
-    if ($_POST['message'] != '') {
+  if (!empty($_POST['posted'])) {
+    if ($_POST['postedMessage'] != '') {
       // 画像アップロード
       list($result, $message) = validate();
       if ($result !== true) {
