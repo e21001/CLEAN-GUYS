@@ -33,11 +33,11 @@
     </header>
     <main>
       <h2><?php echo escape($user['name']) ?>さん、こんにちは！</h2>
-      <form class="" name="posted" action="" method="post" enctype="multipart/form-data">
+      <form class=""  action="" method="post" enctype="multipart/form-data">
         <dl>
           <dt>投稿はこちらから！</dt>
           <dd>
-            <textarea name="postedMessage" rows="8" cols="80"></textarea>
+            <textarea name="posted[postedMessage]" rows="8" cols="80"></textarea>
           </dd>
           <dt>写真など</dt>
           <dd>
@@ -45,7 +45,7 @@
           </dd>
           <dt>ジャンル</dt>
           <dd>
-            <select class="" name="category">
+            <select class="" name="posted[category]">
               <option value="1">募集</option>
               <option value="2">報告</option>
               <option value="3">情報</option>
@@ -54,7 +54,7 @@
         </dl>
         <input type="submit" name="operation" value="投稿する">
       </form>
-      <?php echo var_dump($_POST['post']) ?>
+      <?php echo var_dump($_POST['posted']) ?>
     </main>
     <footer>
       <p><small>&copy; 2021 CLEAN GUYS</small></p>

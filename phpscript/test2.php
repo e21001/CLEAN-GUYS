@@ -5,10 +5,9 @@
   require_once dirname(__FILE__) . '/dbconnect.php';
   session_start();
   ini_set('error_reporting', 'E_ALL & ~E_NOTICE');
-
   // エラー項目の確認
   if (!empty($_POST['posted'])) {
-    if ($_POST['postedMessage'] != '') {
+    if ($_FILES['postedImage'] !== ' ') {
       // 画像アップロード
       list($result, $message) = validate();
       if ($result !== true) {
@@ -23,14 +22,13 @@
       }
       // 投稿を記録する
       if (empty($error)) {
-        $postedMessage = $db->prepare('INSERT INTO posts SET user_id=?, message=?, picture=?, category_id=?, created=NOW()');
+        $postedMessage = $db->prepare('INSERT INTO posts SET message=?, user_id=?, picture=?, category_id=?, created=NOW()');
         $postedMessage->execute(array(
+          $_POST['posted']['postedMessage'],
           $user['id'],
-          $_POST['postedMessage'],
           $destinationPath,
-          $_POST['category']
+          $_POST['posted']['category']
         ));
-
         header('Location: post.php');
         exit();
       }
