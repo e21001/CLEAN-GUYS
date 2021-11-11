@@ -5,6 +5,17 @@
   require_once dirname(__FILE__) . '/dbconnect.php';
   session_start();
   ini_set('error_reporting', 'E_ALL & ~E_NOTICE');
+  if (isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()) {
+    // ログインしている
+    $_SESSION['time'] = time();
+
+    $users = $db->prepare('SELECT * FROM users WHERE id=?');
+    $users->execute(array($_SESSION['id']));
+    $user = $users->fetch();
+  } else {
+    // ログインしていない
+    header('Location: cleanguys.php');
+  }
   // エラー項目の確認
   if (!empty($_POST['posted'])) {
     if ($_FILES['postedImage'] !== ' ') {
@@ -21,11 +32,11 @@
         return;
       }
       // 投稿を記録する
-      if (empty($error)) {
-        $postedMessage = $db->prepare('INSERT INTO posts SET message=?, user_id=?, picture=?, category_id=?, created=NOW()');
+      if ($result) {
+        $postedMessage = $db->prepare('INSERT INTO posts SET user_id=?, message=?, picture=?, category_id=?, created=NOW()');
         $postedMessage->execute(array(
-          $_POST['posted']['postedMessage'],
           $user['id'],
+          $_POST['posted']['postedMessage'],
           $destinationPath,
           $_POST['posted']['category']
         ));

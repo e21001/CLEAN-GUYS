@@ -13,7 +13,6 @@
     // ログインしていない
     header('Location: cleanguys.php');
   }
-
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -54,7 +53,6 @@
         </dl>
         <input type="submit" name="operation" value="投稿する">
       </form>
-      <?php echo var_dump($_POST['posted']) ?>
     </main>
     <footer>
       <p><small>&copy; 2021 CLEAN GUYS</small></p>

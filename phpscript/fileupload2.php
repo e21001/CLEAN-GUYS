@@ -31,3 +31,4 @@
   function generateDestinationPath():string {
     return 'postedImage/' . date('Ymd-His-') . rand(10000, 99999) . '.' . getExtension($_FILES['postedImage']['name']);
   }
+?>
