@@ -33,7 +33,12 @@ header {
 }
 /* main部分 */
 main {
-  margin-top: 50px;
+  margin-top: 10px;
+}
+.post-page {
+  display: flex;
+  justify-content: space-between;
+
 }
 .page-title {
   margin: 25px;
@@ -76,6 +81,84 @@ main {
 }
 .registration-btn:hover {
   background-color: rgb(6, 115, 0, 0.5);
+}
+/* article部分 */
+article {
+  width: 74%;
+}
+.post-form-here {
+  color: rgb(12, 198, 86);
+}
+.post-form textarea{
+  width: 100%;
+  border: 2px solid rgb(14, 29, 133, .5);
+  border-radius: 6px;
+  font-size: 20px;
+}
+.display-post {
+  width: 100%;
+}
+.guide {
+  display: inline;
+  border-bottom: 2px solid rgb(226, 36, 218, .5);
+}
+.post-dl {
+}
+dd input[type="file"], select{
+  margin-left: 30px;
+}
+select {
+  margin-bottom: 10px;
+}
+.display-posts {
+  display: flex;
+  margin-bottom: 5px;
+  clear: both;
+}
+.display-posts img {
+  width: 200px;
+}
+.posted-details .letter {
+  font-size: 20px;
+  padding: 10px;
+}
+.posted-details .day {
+  padding: 10px;
+}
+/* aside部分 */
+aside {
+  width: 23%;
+  border-left: 1px solid rgb(14, 29, 133, .5);
+  text-align: center;
+  padding-left: 5px;
+}
+aside p {
+  padding: 12px 10px;
+}
+.sub-title {
+  font-size: 20px;
+  padding: 0 8px 8px;
+  border-bottom: 1px solid rgb(14, 29, 133, .5);
+  font-weight: normal;
+}
+.sub-menu {
+  margin-bottom: 60px;
+  list-style: none;
+  margin-top: 10px;
+}
+.sub-menu li {
+  font-size: 20px;
+  padding-left: 14px;
+  margin-bottom: 10px;
+  border-bottom: 1px #ddd solid;
+}
+.sub-menu a {
+  color: #000;
+  padding: 10px;
+  display: block;
+}
+.sub-menu a:hover {
+  color: rgb(14, 29, 133, .5);
 }
 /* footer部分 */
 footer {

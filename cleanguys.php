@@ -14,7 +14,7 @@
     <header>
       <h1><img class="header-logo" src="img/logo.png" alt="CLEAN GUYSロゴ"></h1>
     </header>
-    <main>
+    <main class="first-display">
       <div class="page-title">
         <h2><img class="logo" src="img/logo.png" alt="CLEAN GUYSロゴ"></h2>
         <p>ビーチクリーン募集掲示板</p>

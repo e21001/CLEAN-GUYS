@@ -30,29 +30,79 @@
     <header>
       <h1><img class="header-logo" src="img/logo.png" alt="CLEAN GUYSロゴ"></h1>
     </header>
-    <main>
-      <h2><?php echo escape($user['name']) ?>さん、こんにちは！</h2>
-      <form class=""  action="" method="post" enctype="multipart/form-data">
-        <dl>
-          <dt>投稿はこちらから！</dt>
-          <dd>
-            <textarea name="posted[postedMessage]" rows="8" cols="80"></textarea>
-          </dd>
-          <dt>写真など</dt>
-          <dd>
-            <input type="file" name="postedImage" value="">
-          </dd>
-          <dt>ジャンル</dt>
-          <dd>
-            <select class="" name="posted[category]">
-              <option value="1">募集</option>
-              <option value="2">報告</option>
-              <option value="3">情報</option>
-            </select>
-          </dd>
-        </dl>
-        <input type="submit" name="operation" value="投稿する">
-      </form>
+    <main class="post-page">
+      <article class="">
+        <h2><?php echo escape($user['name']) ?>さん、こんにちは！</h2>
+        <h3 class="post-form-here">投稿はこちらから！</h3>
+        <form class="post-form"  action="" method="post" enctype="multipart/form-data">
+          <dl class="post-dl">
+            <dt class="guide">写真など</dt>
+            <dd>
+              <input type="file" name="postedImage" value="">
+            </dd>
+            <dt class="guide">ジャンル</dt>
+            <dd class="genre">
+              <select class="" name="posted[category]">
+                <option value="1">募集</option>
+                <option value="2">報告</option>
+                <option value="3">情報</option>
+              </select>
+            </dd>
+            <dd>
+              <textarea name="posted[postedMessage]" rows="3" cols="50"></textarea>
+            </dd>
+          </dl>
+          <input type="submit" name="operation" value="投稿する">
+        </form>
+        <div class="display-posts">
+          <img src="./postedImage/someone.JPG" alt="picture">
+          <div class="posted-details">
+            <p class="letter">something posted some lettter some lettter some lettter some lettter lettter lettter lettter lettter lettter lettter lettter lettter lettter</p>
+            <p class="day">2021-11-11 18:35</p>
+          </div>
+        </div>
+        <div class="display-posts">
+          <img src="./postedImage/someone.JPG" alt="picture">
+          <div class="posted-details">
+            <p class="letter">something posted some lettter some lettter some lettter some lettter lettter lettter lettter lettter lettter lettter lettter lettter lettter</p>
+            <p class="day">2021-11-11 18:35</p>
+          </div>
+        </div>
+        <div class="display-posts">
+          <img src="./postedImage/someone.JPG" alt="picture">
+          <div class="posted-details">
+            <p class="letter">something posted some lettter some lettter some lettter some lettter lettter lettter lettter lettter lettter lettter lettter lettter lettter</p>
+            <p class="day">2021-11-11 18:35</p>
+          </div>
+        </div>
+        <div class="display-posts">
+          <img src="./postedImage/someone.JPG" alt="picture">
+          <div class="posted-details">
+            <p class="letter">something posted some lettter some lettter some lettter some lettter lettter lettter lettter lettter lettter lettter lettter lettter lettter</p>
+            <p class="day">2021-11-11 18:35</p>
+          </div>
+        </div>
+        <div class="display-posts">
+          <img src="./postedImage/someone.JPG" alt="picture">
+          <div class="posted-details">
+            <p class="letter">something posted some lettter some lettter some lettter some lettter lettter lettter lettter lettter lettter lettter lettter lettter lettter</p>
+            <p class="day">2021-11-11 18:35</p>
+          </div>
+        </div>
+      </article>
+      <aside class="">
+        <h1>ジャンル別投稿</h1>
+        <ul class="sub-menu">
+          <li><a href="">募集</a></li>
+          <li><a href="">情報</a></li>
+          <li><a href="">報告</a></li>
+          <li><a href="">お知らせ</a></li>
+        </ul>
+        <h4 class="sub-title">このサイトについて</h3>
+        <p>
+          あああああああああああああああああああああああああああああああああああああああ
+        </p>
+      </aside>
     </main>
     <footer>
       <p><small>&copy; 2021 CLEAN GUYS</small></p>
