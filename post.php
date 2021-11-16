@@ -96,7 +96,7 @@
           <li><a href="">募集</a></li>
           <li><a href="">情報</a></li>
           <li><a href="">報告</a></li>
-          <li><a href="">お知らせ</a></li>
+          <li><a href="user-info.php">お知らせ</a></li>
         </ul>
         <h4 class="sub-title">このサイトについて</h3>
         <p>
