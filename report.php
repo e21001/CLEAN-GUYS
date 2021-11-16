@@ -35,15 +35,12 @@
         <div class="display-posts">
           <img class="posted-image" src="./postedImage/someone.JPG" alt="picture">
           <div class="posted-details">
-            <p class="letter">まずは投稿してみよう！<br>CLEAN　GUYS (運営スタッフ)　より</p>
+            <p class="letter">something posted some lettter some lettter some lettter some lettter lettter lettter lettter lettter lettter lettter lettter lettter lettter</p>
             <p class="day">2021-11-11 18:35</p>
-          </div>
-        </div>
-        <div class="display-posts">
-          <img class="posted-image" src="./postedImage/someone.JPG" alt="picture">
-          <div class="posted-details">
-            <p class="letter">CLEAN GUYS ~ビーチクリーン募集掲示板~ サイト完成しました！<br>よろしくお願いします！<br>CLEAN　GUYS (運営スタッフ)　より</p>
-            <p class="day">2021-11-11 18:35</p>
+            <div class="user-info">
+              <img class="user-pic" src="./postedImage/user.png" alt="user-picture">
+              <p class="user-name">投稿者：ユーザーネーム</p>
+            </div>
           </div>
         </div>
       </article>

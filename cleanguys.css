@@ -95,6 +95,25 @@ article {
   border-radius: 6px;
   font-size: 20px;
 }
+.submit-btn {
+  display: inline-block;
+  background-color: rgb(11, 19, 210, .5);
+  color: #FFF;
+  width: 80px;
+  padding: 7px 10px;
+  text-decoration: none;
+  border-radius: 4px;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.12), 0 3px 20px 0 rgba(0,0,0,0.12), 0 5px 6px -2px rgba(0,0,0,0.2);
+  -webkit-tap-highlight-color: transparent;
+  transition: .3s ease-out;
+  display: block;
+  margin: 5px 0 5px auto;
+}
+.submit-btn:hover{
+	 cursor: pointer;
+	 text-decoration: none;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+}
 .display-post {
   width: 100%;
 }
@@ -107,23 +126,61 @@ article {
 dd input[type="file"], select{
   margin-left: 30px;
 }
-select {
-  margin-bottom: 10px;
+.genre {
+  width:90%;
+  margin: 2px;
+  position:relative;
+}
+select{
+  -webkit-appearance:none;
+  appearance:none;
+  width: 15%;
+  padding: 5px;
+  box-sizing:border-box;
+  font-size: 15px;
+  border:#ccc 1px solid;
+  border-radius:0;
+  background:#fff;
+}
+.genre::after{
+  content:"";
+  display:block;
+  width:10px;
+  height:10px;
+  position:absolute;
+  right: 750px;
+  top: 35%;
+  border-bottom:#333 2px solid;
+  border-right:#333 2px solid;
+  transform:rotate(45deg)translateY(-30%);
 }
 .display-posts {
   display: flex;
   margin-bottom: 5px;
   clear: both;
 }
-.display-posts img {
+.display-posts .posted-image {
   width: 200px;
 }
 .posted-details .letter {
   font-size: 20px;
-  padding: 10px;
+  padding: 5px;
 }
 .posted-details .day {
-  padding: 10px;
+  padding-left: 5px;
+}
+.user-info {
+  display: flex;
+  margin-left: 5px;
+}
+.user-info .user-pic {
+  width: 40px;
+  height: 40px;
+  object-fit:cover;
+	border-radius:50%;
+}
+.user-info .user-name {
+  padding: 5px 10px;
 }
 /* aside部分 */
 aside {
@@ -153,18 +210,18 @@ aside p {
   border-bottom: 1px #ddd solid;
 }
 .sub-menu a {
-  color: #000;
+  color: rgb(14, 29, 133, .5);
   padding: 10px;
   display: block;
 }
 .sub-menu a:hover {
-  color: rgb(14, 29, 133, .5);
+  color: #000;
 }
 /* footer部分 */
 footer {
   margin-top: auto;
   text-align: center;
-  border-top: 3px solid rgb(14, 29, 133, .5);
+  border-top: 3px solid rgb(14, 29, 133);
 }
 footer p {
   margin:10px 20px;

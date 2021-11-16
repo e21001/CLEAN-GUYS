@@ -52,50 +52,71 @@
               <textarea name="posted[postedMessage]" rows="3" cols="50"></textarea>
             </dd>
           </dl>
-          <input type="submit" name="operation" value="投稿する">
+          <input class="submit-btn" type="submit" name="operation" value="投稿する">
         </form>
         <div class="display-posts">
-          <img src="./postedImage/someone.JPG" alt="picture">
+          <img class="posted-image" src="./postedImage/someone.JPG" alt="picture">
           <div class="posted-details">
             <p class="letter">something posted some lettter some lettter some lettter some lettter lettter lettter lettter lettter lettter lettter lettter lettter lettter</p>
             <p class="day">2021-11-11 18:35</p>
+            <div class="user-info">
+              <img class="user-pic" src="./postedImage/user.png" alt="user-picture">
+              <p class="user-name">投稿者：ユーザーネーム</p>
+            </div>
           </div>
         </div>
         <div class="display-posts">
-          <img src="./postedImage/someone.JPG" alt="picture">
+          <img class="posted-image" src="./postedImage/someone.JPG" alt="picture">
           <div class="posted-details">
             <p class="letter">something posted some lettter some lettter some lettter some lettter lettter lettter lettter lettter lettter lettter lettter lettter lettter</p>
             <p class="day">2021-11-11 18:35</p>
+            <div class="user-info">
+              <img class="user-pic" src="./postedImage/user.png" alt="user-picture">
+              <p class="user-name">投稿者：ユーザーネーム</p>
+            </div>
           </div>
         </div>
         <div class="display-posts">
-          <img src="./postedImage/someone.JPG" alt="picture">
+          <img class="posted-image" src="./postedImage/someone.JPG" alt="picture">
           <div class="posted-details">
             <p class="letter">something posted some lettter some lettter some lettter some lettter lettter lettter lettter lettter lettter lettter lettter lettter lettter</p>
             <p class="day">2021-11-11 18:35</p>
+            <div class="user-info">
+              <img class="user-pic" src="./postedImage/someone.JPG" alt="user-picture">
+              <p class="user-name">投稿者：ユーザーネーム</p>
+            </div>
           </div>
         </div>
         <div class="display-posts">
-          <img src="./postedImage/someone.JPG" alt="picture">
+          <img class="posted-image" src="./postedImage/someone.JPG" alt="picture">
           <div class="posted-details">
             <p class="letter">something posted some lettter some lettter some lettter some lettter lettter lettter lettter lettter lettter lettter lettter lettter lettter</p>
             <p class="day">2021-11-11 18:35</p>
+            <div class="user-info">
+              <img class="user-pic" src="./postedImage/user.png" alt="user-picture">
+              <p class="user-name">投稿者：ユーザーネーム</p>
+            </div>
           </div>
         </div>
         <div class="display-posts">
-          <img src="./postedImage/someone.JPG" alt="picture">
+          <img class="posted-image" src="./postedImage/someone.JPG" alt="picture">
           <div class="posted-details">
             <p class="letter">something posted some lettter some lettter some lettter some lettter lettter lettter lettter lettter lettter lettter lettter lettter lettter</p>
             <p class="day">2021-11-11 18:35</p>
+            <div class="user-info">
+              <img class="user-pic" src="./postedImage/user.png" alt="user-picture">
+              <p class="user-name">投稿者：ユーザーネーム</p>
+            </div>
           </div>
         </div>
       </article>
       <aside class="">
         <h1>ジャンル別投稿</h1>
         <ul class="sub-menu">
-          <li><a href="">募集</a></li>
-          <li><a href="">情報</a></li>
-          <li><a href="">報告</a></li>
+          <li><a href="post.php">投稿</a></li>
+          <li><a href="member.php">募集</a></li>
+          <li><a href="information.php">情報</a></li>
+          <li><a href="report.php">報告</a></li>
           <li><a href="user-info.php">お知らせ</a></li>
         </ul>
         <h4 class="sub-title">このサイトについて</h3>
