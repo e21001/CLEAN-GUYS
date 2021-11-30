@@ -29,6 +29,7 @@
   <div class="container">
     <header>
       <h1><img class="header-logo" src="img/logo.png" alt="CLEAN GUYSロゴ"></h1>
+      <div class="log-out"><a href="logout.php">ログアウト</a></div>
     </header>
     <main class="post-page">
       <article class="">
@@ -50,11 +51,12 @@
       <aside class="">
         <h1>ジャンル別投稿</h1>
         <ul class="sub-menu">
-          <li><a href="post.php">投稿</a></li>
+          <li><a href="post.php">全ての投稿</a></li>
           <li><a href="member.php">募集</a></li>
           <li><a href="information.php">情報</a></li>
           <li><a href="report.php">報告</a></li>
           <li><a href="user-info.php">お知らせ</a></li>
+          <li class="res-log-out"><a href="logout.php">ログアウト</a></li>
         </ul>
         <h4 class="sub-title">このサイトについて</h3>
         <p>

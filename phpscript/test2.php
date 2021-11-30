@@ -33,7 +33,7 @@
       }
       // 投稿を記録する
       if ($result) {
-        $postedMessage = $db->prepare('INSERT INTO posts SET user_id=?, message=?, picture=?, category_id=?, created=NOW()');
+        $postedMessage = $db->prepare('INSERT INTO posts SET user_id=?, message=?, posted_picture=?, category_id=?, created=NOW()');
         $postedMessage->execute(array(
           $user['id'],
           $_POST['posted']['postedMessage'],

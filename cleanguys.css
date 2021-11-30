@@ -25,11 +25,17 @@ li {
 }
 /* header部分 */
 header {
-  border-bottom: 3px solid rgb(14, 29, 133, .5);
+  border-bottom: 3px solid #000;
+  display: flex;
+  justify-content: space-between;
 }
 .header-logo {
   margin-top: 20px;
   width: 450px;
+}
+header .log-out {
+  padding: 36px;
+  font-size: 20px;
 }
 /* main部分 */
 main {
@@ -91,7 +97,7 @@ article {
 }
 .post-form textarea{
   width: 100%;
-  border: 2px solid rgb(14, 29, 133, .5);
+  border: 2px solid #000;
   border-radius: 6px;
   font-size: 20px;
 }
@@ -142,18 +148,6 @@ select{
   border-radius:0;
   background:#fff;
 }
-.genre::after{
-  content:"";
-  display:block;
-  width:10px;
-  height:10px;
-  position:absolute;
-  right: 750px;
-  top: 35%;
-  border-bottom:#333 2px solid;
-  border-right:#333 2px solid;
-  transform:rotate(45deg)translateY(-30%);
-}
 .display-posts {
   display: flex;
   margin-bottom: 5px;
@@ -161,6 +155,9 @@ select{
 }
 .display-posts .posted-image {
   width: 200px;
+}
+.display-posts .view-posted-image {
+  width: 400px;
 }
 .posted-details .letter {
   font-size: 20px;
@@ -182,10 +179,13 @@ select{
 .user-info .user-name {
   padding: 5px 10px;
 }
+.paging {
+  text-align: center;
+}
 /* aside部分 */
 aside {
   width: 23%;
-  border-left: 1px solid rgb(14, 29, 133, .5);
+  border-left: 1px solid #000;
   text-align: center;
   padding-left: 5px;
 }
@@ -216,6 +216,10 @@ aside p {
 }
 .sub-menu a:hover {
   color: #000;
+}
+/* ログアウトボタンの隠蔽 */
+.res-log-out {
+  display: none;
 }
 /* footer部分 */
 footer {
@@ -310,5 +314,64 @@ button:hover {
   }
   .registration-form input[type="file"] {
     font-size: 15px;
+  }
+  /* ログアウト部分 */
+  .log-out {
+    display: none;
+  }
+  /* トップページ部分 */
+  .post-page {
+    flex-direction: column;
+  }
+  article,
+  aside {
+    width: 100%;
+    border-left: none;
+  }
+  /* article部分 */
+  article h2 {
+    font-size: 15px;
+  }
+  .submit-btn {
+    padding: 1px 1px;
+  }
+  .display-posts .posted-image {
+    width: 150px;
+  }
+  .posted-details .letter {
+    font-size: 12px;
+  }
+  .posted-details .day {
+    font-size: 8px;
+  }
+  .user-info .user-name {
+    font-size: 5px;
+  }
+  /* aside部分 */
+  aside {
+    margin: 20px 0;
+  }
+  aside h1 {
+    display: none;
+  }
+  aside .sub-menu {
+    border-top: 2px solid #000;
+    padding-top: 5px;
+  }
+  aside .sub-menu li {
+    padding-left: 0;
+    margin-bottom: 5px
+  }
+  aside .sub-menu a {
+    padding: 0;
+  }
+  aside .sub-title {
+    font-size: 17px;
+  }
+  aside .sub-explanation {
+    font-size: 11px;
+  }
+  .res-log-out {
+    display: inline;
   }
 }
