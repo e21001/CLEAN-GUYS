@@ -78,7 +78,12 @@
           <div class="replies">
             <img class="rep-image user-pic" src="./join/<?php echo escape($rep['picture']) ?>" alt="プロフィール画像">
             <div class="rep-contents">
-              <p class="rep-name">(<?php echo escape($rep['name']) ?>)</p>
+              <p class="rep-name">
+                (<?php echo escape($rep['name']) ?>)
+                <?php if ($_SESSION['id'] === $rep['user_id']): ?>
+                  <a href="delete_rep.php?id=<?php echo $rep['id'] ?>" style="color:#f33;">【削除】</a>
+                <?php endif ?>
+              </p>
               <p class="rep-message"><?php echo makeLink(escape($rep['message'])) ?></p>
               <p class="rep-day" style="color:#6a6964;"><?php echo substr(escape($rep['created']), 0, 16) ?></p>
             </div>
@@ -93,6 +98,7 @@
           <li><a href="information.php">情報</a></li>
           <li><a href="report.php">報告</a></li>
           <li><a href="user-info.php">お知らせ</a></li>
+          <li><a href="">お問い合わせ</a></li>
           <li class="res-log-out"><a href="logout.php">ログアウト</a></li>
         </ul>
         <h4 class="sub-title">このサイトについて</h3>

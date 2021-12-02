@@ -116,6 +116,7 @@
           <li><a href="information.php">情報</a></li>
           <li><a href="report.php">報告</a></li>
           <li><a href="user-info.php">お知らせ</a></li>
+          <li><a href="">お問い合わせ</a></li>
           <li class="res-log-out"><a href="logout.php">ログアウト</a></li>
         </ul>
         <h4 class="sub-title">このサイトについて</h3>
