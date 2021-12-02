@@ -45,7 +45,7 @@
                 <p class="letter"><a href="./view.php?id=<?php echo $post['id'] ?>"><?php echo makeLink(escape($post['message'])) ?></a></p>
               <?php endif ?>
               <p class="day">
-                <a href="./view.php?id=<?php echo $post['id'] ?>"><?php echo escape($post['created']) ?></a>
+                <a href="./view.php?id=<?php echo $post['id'] ?>"><?php echo substr(escape($post['created']), 0, 16) ?></a>
               </p>
               <div class="user-info">
                 <img class="user-pic" src="./join/<?php echo escape($post['picture']) ?>" alt="user-picture">
@@ -56,7 +56,7 @@
         <?php endforeach ?>
       </article>
       <aside class="">
-        <h1>ジャンル別投稿</h1>
+        <h1>カテゴリー</h1>
         <ul class="sub-menu">
           <li><a href="post.php">全ての投稿</a></li>
           <li><a href="member.php">募集</a></li>

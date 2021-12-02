@@ -29,14 +29,14 @@
     <main class="post-page">
       <article class="">
         <?php if ($post = $posts->fetch()): ?>
-          <div class="display-posts">
+          <div class="display-posts view-display-posts">
             <img class="posted-image view-posted-image" src="<?php echo escape($post['posted_picture']) ?>" alt="picture">
             <div class="posted-details">
-              <p class="letter"><?php echo makeLink(escape($post['message'])) ?></p>
-              <p class="day"><?php echo escape($post['created']) ?></p>
-              <div class="user-info">
+              <p class="letter view-letter"><?php echo makeLink(escape($post['message'])) ?></p>
+              <p class="day view-day"><?php echo substr(escape($post['created']), 0, 16) ?></p>
+              <div class="user-info view-user-info">
                 <img class="user-pic" src="./join/<?php echo escape($post['picture']) ?>" alt="user-picture">
-                <p class="user-name">投稿者：<?php echo escape($post['name']) ?></p>
+                <p class="user-name"><?php echo escape($post['name']) ?></p>
               </div>
             </div>
           </div>
@@ -45,9 +45,9 @@
         <?php endif ?>
       </article>
       <aside class="">
-        <h1>ジャンル別投稿</h1>
+        <h1>カテゴリー</h1>
         <ul class="sub-menu">
-          <li><a href="post.php">投稿</a></li>
+          <li><a href="post.php">全ての投稿</a></li>
           <li><a href="member.php">募集</a></li>
           <li><a href="information.php">情報</a></li>
           <li><a href="report.php">報告</a></li>

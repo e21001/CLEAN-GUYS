@@ -49,7 +49,7 @@
         </div>
       </article>
       <aside class="">
-        <h1>ジャンル別投稿</h1>
+        <h1>カテゴリー</h1>
         <ul class="sub-menu">
           <li><a href="post.php">全ての投稿</a></li>
           <li><a href="member.php">募集</a></li>

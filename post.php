@@ -78,19 +78,19 @@
             <img class="posted-image" src="<?php echo escape($post['posted_picture']) ?>" alt="picture">
             <div class="posted-details">
               <?php if ((mb_strlen($post['message']) > 20)) : ?>
-                <p class="letter"><a href="./view.php?id=<?php echo $post['id'] ?>"><?php echo mb_substr((makeLink(escape($post['message']))), 0, 20) ?>...</a></p>
+                <p class="letter"><a href="./view.php?id=<?php echo $post['id'] ?>"><?php echo mb_substr((escape($post['message'])), 0, 20) ?>...</a></p>
               <?php else: ?>
                 <p class="letter"><a href="./view.php?id=<?php echo $post['id'] ?>"><?php echo makeLink(escape($post['message'])) ?></a></p>
               <?php endif ?>
               <p class="day">
-                <?php echo escape($post['created']) ?>
+                <?php echo substr(escape($post['created']), 0, 16) ?>
                 <?php if ($_SESSION['id'] === $post['user_id']): ?>
                   [<a href="delete.php?id=<?php echo $post['id'] ?>" style="color:#f33;">削除</a>]
                 <?php endif ?>
               </p>
               <div class="user-info">
                 <img class="user-pic" src="./join/<?php echo escape($post['picture']) ?>" alt="user-picture">
-                <p class="user-name">投稿者：<?php echo escape($post['name']) ?></p>
+                <p class="user-name"><?php echo escape($post['name']) ?></p>
               </div>
             </div>
           </div>

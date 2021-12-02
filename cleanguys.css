@@ -157,18 +157,28 @@ select{
   width: 200px;
 }
 .display-posts .view-posted-image {
-  width: 400px;
+  width: 300px;
 }
 .posted-details .letter {
   font-size: 20px;
   padding: 5px;
 }
+.posted-details .view-letter {
+  font-size: 15px;
+}
 .posted-details .day {
   padding-left: 5px;
+}
+.posted-details .view-day {
+  padding-left: 5px;
+  font-size: 13px;
 }
 .user-info {
   display: flex;
   margin-left: 5px;
+}
+.view-user-info {
+  margin-top: 20px;
 }
 .user-info .user-pic {
   width: 40px;
@@ -332,11 +342,23 @@ button:hover {
   article h2 {
     font-size: 15px;
   }
+  article dd input[type="file"] {
+    font-size: small;
+  }
+  article select {
+    padding: 1px;
+  }
   .submit-btn {
     padding: 1px 1px;
   }
+  .view-display-posts {
+    display: contents;
+  }
   .display-posts .posted-image {
     width: 150px;
+  }
+  .display-posts .view-posted-image {
+    width: auto;
   }
   .posted-details .letter {
     font-size: 12px;
@@ -344,8 +366,20 @@ button:hover {
   .posted-details .day {
     font-size: 8px;
   }
+  .posted-details .view-day {
+    display: inline;
+    float: right;
+  }
+  .user-info .user-pic {
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgb(0, 0, 0, .2);
+  }
   .user-info .user-name {
     font-size: 5px;
+  }
+  .view-user-info {
+    margin: 0;
   }
   /* aside部分 */
   aside {
