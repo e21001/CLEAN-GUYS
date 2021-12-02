@@ -3,12 +3,39 @@
   require_once dirname(__FILE__) . '/phpscript/escape.php';
   require_once dirname(__FILE__) . '/phpscript/dbconnect.php';
 
-  if (empty($_REQUEST['id'])) {
-    header('Location: post.php');
+  // ユーザー情報の取得
+  if (isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()) {
+    // ログインしている
+    $_SESSION['time'] = time();
+
+    $users = $db->prepare('SELECT * FROM users WHERE id=?');
+    $users->execute(array($_SESSION['id']));
+    $user = $users->fetch();
+  } else {
+    // ログインしていない
+    header('Location: cleanguys.php');
   }
   // 投稿を取得する
   $posts = $db->prepare('SELECT u.name, u.picture, p.* FROM users u, posts p WHERE u.id=p.user_id AND p.id=? ORDER BY p.created DESC');
   $posts->execute(array($_REQUEST['id']));
+  // 返信を取得する
+  $reps = $db->prepare("SELECT u.name, u.picture, r.* FROM users u, replies r WHERE u.id=r.user_id AND r.reply_post_id=? ORDER BY r.created DESC");
+  $reps->execute(array($_REQUEST['id']));
+  // 返信を記録する
+  if (!empty($_POST['reply'])) {
+    if ($_POST['reply']['message'] !== '') {
+      $reply_message = $db->prepare('INSERT INTO replies SET user_id=?, message=?, reply_post_id=?, created=NOW()');
+      $reply_message->execute(array(
+        $user['id'],
+        $_POST['reply']['message'],
+        substr($_SERVER['REQUEST_URI'], -2)
+      ));
+      $id = substr($_SERVER['REQUEST_URI'], -2);
+      $url = "view.php?id=" . $id;
+      header('Location:' . $url);
+      exit();
+    }
+  }
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -43,6 +70,20 @@
         <?php else: ?>
           <p>その投稿は削除されたか、URLが間違っています。</p>
         <?php endif ?>
+        <form class="reply-form" action="" method="post">
+          <textarea class="reply-message" name="reply[message]" rows="8" cols="80"></textarea>
+          <input class="submit-btn" type="submit" name="operation" value="投稿する">
+        </form>
+        <?php foreach ($reps as $rep): ?>
+          <div class="replies">
+            <img class="rep-image user-pic" src="./join/<?php echo escape($rep['picture']) ?>" alt="プロフィール画像">
+            <div class="rep-contents">
+              <p class="rep-name">(<?php echo escape($rep['name']) ?>)</p>
+              <p class="rep-message"><?php echo makeLink(escape($rep['message'])) ?></p>
+              <p class="rep-day" style="color:#6a6964;"><?php echo substr(escape($rep['created']), 0, 16) ?></p>
+            </div>
+          </div>
+        <?php endforeach ?>
       </article>
       <aside class="">
         <h1>カテゴリー</h1>

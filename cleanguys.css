@@ -186,8 +186,31 @@ select{
   object-fit:cover;
 	border-radius:50%;
 }
+.reply-form textarea {
+  height: 100px;
+  width: 100%;
+  border: 2px solid #000;
+  border-radius: 6px;
+  font-size: 20px;
+}
+.replies .user-pic {
+  width: 58px;
+  height: 58px;
+  object-fit:cover;
+	border-radius:50%;
+}
 .user-info .user-name {
   padding: 5px 10px;
+}
+.replies {
+  display: flex;
+  margin: 15px;
+}
+.replies .rep-day {
+  font-size: 10px;
+}
+.rep-contents {
+  margin-left: 10px;
 }
 .paging {
   text-align: center;
