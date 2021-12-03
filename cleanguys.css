@@ -224,6 +224,7 @@ aside {
 }
 aside p {
   padding: 12px 10px;
+  font-size: 15px;
 }
 .sub-title {
   font-size: 20px;
@@ -427,6 +428,9 @@ button:hover {
   }
   aside .sub-explanation {
     font-size: 11px;
+  }
+  aside p {
+    font-size: 12px;
   }
   .res-log-out {
     display: inline;

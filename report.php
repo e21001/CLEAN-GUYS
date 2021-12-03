@@ -90,11 +90,12 @@
           <li><a href="information.php">情報</a></li>
           <li><a href="report.php">報告</a></li>
           <li><a href="user-info.php">お知らせ</a></li>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScs8fQcSeKMpLR26GWXRq2f3l4Pt76RB2yK23WOIG0ymxG6hA/viewform?usp=pp_url">お問い合わせ</a></li>
           <li class="res-log-out"><a href="logout.php">ログアウト</a></li>
         </ul>
         <h4 class="sub-title">このサイトについて</h3>
         <p>
-          あああああああああああああああああああああああああああああああああああああああ
+          ビーチクリーン活動の参加者を集めたり<br>募集を見て参加したり<br>汚れている場所を共有したり<br>活動の報告などに使ってください
         </p>
       </aside>
     </main>
