@@ -13,8 +13,23 @@
     // ログインしていない
     header('Location: cleanguys.php');
   }
+
+  $page = $_REQUEST['page'];
+  if ($page === '') {
+    $page = 1;
+  }
+  $page = max($page, 1);
+  // 最終ページを取得する
+  $counts = $db->query('SELECT COUNT(*) AS cnt FROM posts WHERE posts.category_id=3');
+  $cnt = $counts->fetch();
+  $maxPage = ceil($cnt['cnt'] / 10);
+  $page = min($page, $maxPage);
+
+  $start = ($page - 1) * 10;
     // 投稿を取得する
-    $posts = $db->query('SELECT u.name, u.picture, p.* FROM users u, posts p WHERE u.id=p.user_id AND p.category_id=3 ORDER BY p.created DESC');
+  $posts = $db->prepare('SELECT u.name, u.picture, p.* FROM users u, posts p WHERE u.id=p.user_id AND p.category_id=3 ORDER BY p.created DESC LIMIT ?, 10');
+  $posts->bindParam(1, $start, PDO::PARAM_INT);
+  $posts->execute();
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -54,6 +69,18 @@
             </div>
           </div>
         <?php endforeach ?>
+        <ul class="paging">
+          <?php if ($page > 1): ?>
+            <li><a href="imformation.php?page=<?php print($page - 1) ?>">前のページへ</a></li>
+          <?php else: ?>
+            <li>前のページへ</li>
+          <?php endif ?>
+          <?php if ($page < $maxPage): ?>
+            <li><a href="imformation.php?page=<?php print($page + 1) ?>">次のページへ</a></li>
+          <?php else: ?>
+            <li>次のページへ</li>
+          <?php endif ?>
+        </ul>
       </article>
       <aside class="">
         <h1>カテゴリー</h1>

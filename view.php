@@ -72,7 +72,7 @@
         <?php endif ?>
         <form class="reply-form" action="" method="post">
           <textarea class="reply-message" name="reply[message]" rows="8" cols="80"></textarea>
-          <input class="submit-btn" type="submit" name="operation" value="投稿する">
+          <input class="submit-btn" type="submit" name="operation" value="返信する">
         </form>
         <?php foreach ($reps as $rep): ?>
           <div class="replies">

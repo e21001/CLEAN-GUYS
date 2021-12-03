@@ -1,6 +1,7 @@
 <?php
   declare(strict_types=1);
   require_once dirname(__FILE__) . '/../phpscript/test.php';
+  require_once dirname(__FILE__) . '/../phpscript/escape.php';
   session_start();
   ini_set('error_reporting', 'E_ALL & ~E_NOTICE');
 ?>
@@ -29,6 +30,9 @@
           <input id="myname" type="text" name="name" value="">
           <?php if ($error['name'] === 'blank'): ?>
             <p class="error" style="color:red;">* ニックネームを入力してください</p>
+          <?php endif ?>
+          <?php if ($error['name'] === 'length'): ?>
+            <p class="error" style="color:red;">* ニックネームは9文字以内で入力してください</p>
           <?php endif ?>
         </div>
         <div class="control">

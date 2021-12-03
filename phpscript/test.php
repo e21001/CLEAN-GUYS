@@ -11,6 +11,9 @@ if (!empty($_POST)) {
   if ($_POST['name'] === '') {
     $error['name'] = 'blank';
   }
+  if (strlen($_POST['name']) >= 10) {
+    $error['name'] = 'length';
+  }
   if ($_POST['email'] === '') {
     $error['email'] = 'blank';
   }
